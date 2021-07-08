@@ -1,0 +1,500 @@
+@import 'fonts.scss';
+@import 'reset-styles.scss';
+@import 'vars.scss';
+// header
+.header {
+    &__container {
+        max-width: 1470px;
+        margin: 0 auto;
+        @include display-flex;
+        padding: 30px 0 60px 0;
+    }
+    &__menu {
+        cursor: pointer;
+        @include display-flex;
+        @include small-text;
+    }
+    &__burger {
+        margin-right: 12px;
+        position: relative;
+        width: 20px;
+        height: 16px;
+        >span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 20px;
+            height: 2px;
+            background: $color-dark-blue;
+            &::after,
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                background: $color-dark-blue;
+                width: 20px;
+                height: 2px;
+                left: 0;
+            }
+            &::after {
+                top: 7px;
+            }
+            &::before {
+                bottom: 7px;
+            }
+        }
+    }
+    &__search {
+        @include display-flex;
+        margin-left: 70px;
+    }
+    &__search-btn {
+        background-color: inherit;
+        padding: 0;
+    }
+    &__search-input {
+        width: 160px;
+        background-color: inherit;
+        padding: 0 12px;
+        border: 0;
+        @include small-text;
+    }
+    &__phone-link {
+        color: rgb(40, 40, 40);
+        font-size: 16px;
+        font-family: "Gilroy-Bold";
+    }
+    &__user {
+        margin: 0 70px;
+    }
+    &__basket {
+        position: relative;
+        margin-right: 11px;
+        &::after {
+            content: '0';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: -5px;
+            right: -11px;
+            background-color: $color-black;
+            border-radius: 50%;
+            color: $color-white;
+            font-size: 13px;
+            font-family: "Gilroy-Medium";
+            text-align: center;
+        }
+    }
+}
+
+// /header
+// logo
+.logo {
+    margin: 0 327px 0 345px;
+}
+
+// /logo
+// main 
+.main {
+    margin-bottom: 192px;
+    &__container {
+        @include container;
+    }
+    &__item {
+        position: relative;
+        width: 100%;
+        margin: 0 10px;
+    }
+    &__item-img {
+        text-align: -webkit-right;
+    }
+    &__item-man-img {
+        height: 576px;
+        object-fit: contain;
+    }
+    &__item-content {
+        max-width: 460px;
+        text-align: justify;
+        position: absolute;
+        left: 0;
+        top: 100px;
+    }
+    &__item-title {
+        font-size: 70px;
+        font-family: "Gilroy-Extrabold";
+        color: $color-dark;
+        line-height: 1;
+    }
+    &__item-link {
+        cursor: pointer;
+        margin-top: 50px;
+        width: 223px;
+        border: 2px solid $color-dark;
+        background-color: transparent;
+        padding: 21px 34px;
+        >a {
+            font-size: 18px;
+            color: $color-dark;
+            font-family: Gilroy-Regular;
+            &::after {
+                content: url('../images/arrow-main.png');
+                margin-left: 19px;
+                vertical-align: middle;
+            }
+        }
+        &:hover {
+            &>a {
+                &::after {
+                    margin-left: 29px;
+                    transition: 1s;
+                }
+            }
+        }
+    }
+    .slick-prev {
+        transform: rotate(180deg);
+        top: auto;
+        bottom: 15px;
+        left: -3px;
+        z-index: 2;
+        &:before {
+            content: url('../images/arrow-main.png');
+            opacity: 1;
+        }
+        &::after {
+            content: 'Чоловічий одяг';
+            font-size: 15px;
+            font-family: "Gilroy-Medium";
+            color: $color-dark;
+            position: absolute;
+            line-height: 1.333;
+            right: 30px;
+            bottom: 0;
+            z-index: 2;
+            text-align: left;
+            transform: rotate(180deg);
+            display: none;
+        }
+    }
+    .slick-next {
+        top: auto;
+        bottom: 0;
+        right: -105px;
+        &:before {
+            content: url('../images/arrow-main.png');
+            opacity: 1;
+        }
+        &::after {
+            content: 'Жіночий одяг';
+            font-size: 15px;
+            font-family: "Gilroy-Medium";
+            color: $color-dark;
+            position: absolute;
+            line-height: 1.333;
+            right: 30px;
+            top: -4px;
+            text-align: right;
+            z-index: 2;
+        }
+    }
+}
+
+// /main 
+// catalog
+.catalog {
+    position: relative;
+    &__title {
+        font-size: 70px;
+        font-family: "Gilroy-Extrabold";
+        color: rgba(40, 40, 40, 0.2);
+        position: absolute;
+        top: -32px;
+        right: 24%;
+    }
+    &__container {
+        @include container;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    &__item {
+        &.item--1 {
+            @include display-flex;
+            align-items: end;
+        }
+        &.item--2 {
+            margin-top: 130px;
+        }
+        &.item--3 {
+            margin-top: -290px;
+        }
+        &.item--4 {
+            margin-top: 80px;
+        }
+    }
+    &__item-info {
+        margin-top: 20px;
+        @include display-flex;
+        align-items: end;
+        &.info--block {
+            display: block;
+            margin: 77px 0 0 28px;
+            .catalog__item-title {
+                margin-top: 27px;
+            }
+            .catalog__item-text {
+                line-height: 20px;
+            }
+        }
+    }
+    &__item-content {
+        margin-left: 15px;
+    }
+    &__item-category {
+        font-size: 13px;
+        color: $color-black;
+        line-height: 1.538;
+        background-color: #e6e6e6;
+        width: fit-content;
+        padding: 5px 6px;
+        &.category--media {
+            display: none;
+        }
+    }
+    &__item-title {
+        font-size: 20px;
+        font-family: "Gilroy-Bold";
+        color: $color-dark;
+    }
+    &__item-text {
+        font-size: 13px;
+        color: $color-dark;
+        margin: 20px 0;
+    }
+    &__item-price {
+        font-size: 16px;
+        font-family: "Gilroy-Bold";
+        color: $color-dark;
+        &.price--sale {
+            &::after {
+                content: '1 900,00 грн.';
+                font-size: 14px;
+                font-weight: bold;
+                text-decoration: line-through;
+                color: #a4a4a4;
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+// /catalog
+// category
+.category {
+    margin-top: 225px;
+    height: 465px;
+    background-color: $color-gray;
+    &__container {
+        @include container;
+    }
+    &__items {
+        @include display-btw;
+    }
+    &__item {
+        width: 350px;
+        height: 416px;
+        margin-top: -60px;
+        position: relative;
+        &:hover {
+            -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        }
+    }
+    &__item-link {
+        width: 100%;
+        height: 100%;
+        >img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__item-title {
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+        font-size: 18px;
+        font-family: "Gilroy-Bold";
+        color: $color-white;
+        line-height: 3.889;
+    }
+}
+
+// /category
+// blog
+.blog {
+    margin: 150px 0 110px 0;
+    &__container {
+        @include container;
+    }
+    &__items {
+        @include display-btw;
+        align-items: end;
+        flex-wrap: wrap;
+    }
+    &__item {
+        &.item--1 {
+            width: 445px;
+        }
+        &.item--2 {
+            .blog__text {
+                width: 490px;
+            }
+        }
+    }
+    &__title {
+        display: inline-block;
+        font-size: 30px;
+        font-family: "Gilroy-Bold";
+        color: $color-dark;
+        line-height: 0.667;
+        margin-bottom: 50px;
+    }
+    &__link {
+        font-size: 13px;
+        color: rgb(113, 113, 113);
+        line-height: 1.538;
+        margin-left: 55px;
+        &::after {
+            content: url('../images/arrow-blog.png');
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        &:hover {
+            &::after {
+                margin-left: 20px;
+                transition: 1s;
+            }
+        }
+    }
+    &__text {
+        font-size: 15px;
+        color: $color-dark;
+        line-height: 1.333;
+        margin: 30px 0;
+    }
+}
+
+// /blog
+// viewed 
+.viewed {
+    background-color: $color-gray;
+    padding: 110px 0 120px 0;
+    &__container {
+        @include container;
+    }
+    &__title {
+        font-family: "Gilroy-Bold";
+        color: $color-dark;
+        line-height: 0.667;
+        font-size: 30px;
+        margin-bottom: 60px;
+    }
+    &__item {
+        width: 255px;
+        margin: 0 14px;
+        color: $color-dark;
+    }
+    &__item-img {
+        width: 100%;
+        height: 371px
+    }
+    &__item-title {
+        font-size: 20px;
+        font-family: "Gilroy-Bold";
+        line-height: 1;
+        margin: 30px 0 20px 0;
+    }
+    &__item-text {
+        font-size: 13px;
+        line-height: 1.538;
+    }
+    &__item-price {
+        font-size: 16px;
+        font-family: "Gilroy-Bold";
+        margin-top: 16px;
+    }
+    .slick-list {
+        margin: 0 -14px;
+    }
+}
+
+// /viewed 
+// footer
+.footer {
+    padding: 54px 0 37px 0;
+    &__container {
+        @include container;
+    }
+    &__top {
+        @include display-flex;
+        align-items: end;
+        margin-bottom: 60px;
+    }
+    &__item {
+        &.item--2 {
+            margin: 0 205px 0 104px;
+        }
+        &.item--3 {
+            margin: 0 150px 0 0;
+        }
+    }
+    &__item-title {
+        font-size: 14px;
+        font-family: "Gilroy-Bold";
+        color: $color-dark;
+        text-transform: uppercase;
+        line-height: 3;
+        &::after {
+            content: url('../images/arrow-footer.png');
+            margin-left: 8px;
+            opacity: 0;
+        }
+    }
+    &__link {
+        >a {
+            font-size: 14px;
+            color: rgb(113, 113, 113);
+            line-height: 2.143;
+        }
+    }
+    &__bottom {
+        @include display-flex;
+        align-items: baseline;
+        .logo {
+            margin: 0;
+            width: 110px;
+            margin-right: 11px;
+            >a {
+                width: 100%;
+                >img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &__text {
+        font-size: 13px;
+        color: rgb(113, 113, 113);
+        line-height: 2.308;
+        &.text--right {
+            margin-left: auto;
+        }
+    }
+}
+
+// /footer 
+@import 'adaptive.scss';

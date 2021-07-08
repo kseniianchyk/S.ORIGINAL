@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.ORIGINAL</title>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__menu">
+                <div class="header__burger">
+                    <span></span>
+                </div>
+                <p>Меню</p>
+            </div>
+            <form class="header__search" action="#">
+                <button class="header__search-btn" type="submit">
+                    <svg 
+                     xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="24px" height="24px">
+                    <image  x="0px" y="0px" width="24px" height="24px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQflBwcMFhijRBDdAAAA90lEQVQ4y5WTUXnDIBSF/1VBHQwJkRAHi4TMQSXghDpgDtgUJA7YFDAHZw+jTWgJac8TfPznfudyAe7V45gQQiQ8Iw0ZAkJEAhafjZGhjnckRKAvSlgSwm3htQCG6d5yJKGidnk6oTKYRdhmd4lY1o+0ZdeBB8Rpx2AQfu3u2NNEuiwD2sXBo8MD2KJvOCxLjruGbjH8wOYM1m3PF8MH8LaD9xjmZRsRpmkI5U2OiNDAK+e+/iZzHJFuEziECJVgFpFuB+sQDo8QjiFfcseJiIh1/D9rzN9T129qlxm9ZHzkzPvV3jHwigG+mPnkd6v6Q3oSh/Qc/gfCCWy5siKgSwAAAABJRU5ErkJggg==" />
+                    </svg>
+                </button>
+                <input class="header__search-input" name="search" id="search" type="text" placeholder="Пошук по 1234 товарів">
+            </form>
+            <!-- logo -->
+            <div class="logo">
+                <a href="#" class="logo__link">
+                    <img src="images/logo.png" alt="">
+                </a>
+            </div>
+            <!-- /logo -->
+            <div class="header__phone">
+                <a class="header__phone-link" href="#">+38 067 123 45 67</a>
+            </div>
+            <div class="header__user">
+                <a class="header__user-link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="24px">
+<image  x="0px" y="0px" width="20px" height="24px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAYCAQAAABQQhX9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQflBwcMHDBsHlCtAAAA/ElEQVQoz4WSYdnCIBSF31lAImAC12CLYAQbfEZYAx8T8JiARdAE0wSsgd8SXH/AFBzo+Qf3hcs5F4il6HAIgqPjiwYEx5EjDmEoYR2Cea0MUrrV4crrVVTQnBOwR+fAdtFhAurcjTmpJThmwVse3CbQFvjPnbY83q1QCDb/njYpWSRjMMgkkzEUVQfE43VcepvRWAYmNlRUbJgYsHHkoNhjEQSbmJn39n5Xh2Y28/Q2wA7tDRyim5azOXhjj1JaacIrFPef4B3161Mk8TRpCAtpmnkaUQgfRubgTAW0/LEDYGTkxgSsqdGhU8+JS/U6u6NBJ1leGLnS+6/2BE2NXu2NYkwLAAAAAElFTkSuQmCC" />
+</svg>
+                </a>
+            </div>
+            <div class="header__basket">
+                <a class="header__basket-link" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19px" height="24px">
+<image  x="0px" y="0px" width="19px" height="24px"  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAYCAQAAACyng6EAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQflBwcMHQfNuMTjAAAA6ElEQVQoz43SUXGDQBSF4a87FYADkLAOkipopTQKigPqIBJoFVAJxAFVQKJg+wAhZCZADy97mH/vuXd3matwlCTJUWFBUS+plWpJLz7GGsl+XO8lzSOokFQzX0m34GdEb8iRKScsw4dffGmvYWtfM1SjdRBVDsO+caDBT40k9dj0ftbb1dcSAZzQ+dHNsKs/DSNk0++Xu8nnPgsizpZ1RgzjCMtqIUyhaxpDuxWku4VuYYL8H6F5UKzWGuoVYSNyjA1Lj+9OMchWTw1aWcBlA7sMV7/bwHY8qbxrfS9Cr6JPKPUrb7dX8gd8WF+PEzUZgwAAAABJRU5ErkJggg==" />
+</svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+    <!-- main -->
+    <div class="main">
+        <div class="main__container">
+            <div class="main__items">
+                <div class="main__item">
+                    <div class="main__item-content">
+                        <div class="main__item-title">Нові надходження</div>
+                        <div class="main__item-link">
+                            <a href="#">Переглянути</a>
+                        </div>
+                    </div>
+                    <div class="main__item-img">
+                        <img src="images/main-photo.png" alt="">
+                    </div>
+                </div>
+                <div class="main__item">
+                    <div class="main__item-content">
+                        <div class="main__item-title">Нові надходження</div>
+                        <div class="main__item-link">
+                            <a href="#">Переглянути</a>
+                        </div>
+                    </div>
+                    <div class="main__item-img">
+                        <img class="main__item-man-img" src="images/category2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /main -->
+    <!-- catalog -->
+    <div class="catalog">
+        <h4 class="catalog__title">Зверніть увагу</h4>
+        <div class="catalog__container">
+            <div class="catalog__item item--1">
+                <div class="catalog__item-img">
+                    <img src="images/suit1.png" alt="Костюм з брюками">
+                </div>
+                <div class="catalog__item-info info--block">
+                    <div class="catalog__item-category ">Акція</div>
+                    <div class="catalog__item-category category--media">Акція</div>
+                    <div class="catalog__item-title">Костюм з брюками</div>
+                    <div class="catalog__item-text">Строгий силует - справжній <br> тренд нового сезону.</div>
+                    <div class="catalog__item-price">1 500,00 грн.</div>
+                </div>
+            </div>
+            <div class="catalog__item item--2">
+                <div class="catalog__item-img">
+                    <img src="images/suit2.png" alt="Костюм з брюками">
+                </div>
+                <div class="catalog__item-info">
+                    <div class="catalog__item-category">Новинка</div>
+                    <div class="catalog__item-category category--media">Акція</div>
+                    <div class="catalog__item-content">
+                        <div class="catalog__item-title">Костюм з брюками</div>
+                        <div class="catalog__item-text">Строгий силует - справжній тренд нового сезону.</div>
+                        <div class="catalog__item-price">1 500,00 грн.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog__item item--3">
+                <div class="catalog__item-img">
+                    <img src="images/suit3.png" alt="Костюм з брюками">
+                </div>
+                <div class="catalog__item-info">
+                    <div class="catalog__item-category"> Знижка</div>
+                    <div class="catalog__item-category category--media">Акція</div>
+                    <div class="catalog__item-content">
+                        <div class="catalog__item-title">Костюм з брюками</div>
+                        <div class="catalog__item-text">Строгий силует - справжній тренд нового сезону.</div>
+                        <div class="catalog__item-price price--sale">1 500,00 грн.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="catalog__item item--4">
+                <div class="catalog__item-img">
+                    <img src="images/suit4.png" alt="Костюм з брюками">
+                </div>
+                <div class="catalog__item-info">
+                    <div class="catalog__item-category">ТОП продажів</div>
+                    <div class="catalog__item-category category--media">Акція</div>
+                    <div class="catalog__item-content">
+                        <div class="catalog__item-title">Костюм з брюками</div>
+                        <div class="catalog__item-text">Строгий силует - справжній тренд нового сезону.</div>
+                        <div class="catalog__item-price">1 500,00 грн.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /catalog -->
+    <!-- category -->
+    <div class="category">
+        <div class="category__container">
+            <div class="category__items">
+                <div class="category__item">
+                    <a class="category__item-link" href="#">
+                        <img src="images/category1.png" alt="">
+                    </a>
+                    <p class="category__item-title">Для жінок</p>
+                </div>
+                <div class="category__item">
+                    <a class="category__item-link" href="#">
+                        <img src="images/category2.png" alt="">
+                    </a>
+                    <p class="category__item-title">Для чоловіків</p>
+                </div>
+                <div class="category__item">
+                    <a class="category__item-link" href="#">
+                        <img src="images/category3.png" alt="">
+                    </a>
+                    <p class="category__item-title">Аксесуари</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /category -->
+    <!-- blog -->
+    <div class="blog">
+        <div class="blog__container">
+            <div class="blog__items">
+                <div class="blog__item item--1">
+                    <div class="blog__title">Нові публікації</div>
+                    <a class="blog__link" href="#">Дивитись всі</a>
+                    <div class="blog__text">Lorem ipsum – назва класичного тексту-«риби». «Риба» – слово з жаргону дизайнерів.</div>
+                    <img src="images/blog1.png" alt="">
+                </div>
+                <div class="blog__item item--2">
+                    <img src="images/blog2.png" alt="">
+                    <div class="blog__text">Lorem ipsum – назва класичного тексту-«риби». «Риба» – слово з жаргону дизайнерів<span>,що позначає умовний, часто безглуздий текст.</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /blog -->
+    <!-- viewed -->
+    <section class="viewed">
+        <div class="viewed__container">
+            <h4 class="viewed__title">Ви переглядали</h4>
+            <div class="viewed__items">
+                <div class="viewed__item">
+                    <img class="viewed__item-img" src="images/suit5.png" alt="">
+                    <div class="viewed__item-title">Костюм з брюками</div>
+                    <div class="viewed__item-text">Строгий силует - справжній <br> тренд нового сезону.</div>
+                    <div class="viewed__item-price">1 500,00 грн.</div>
+                </div>
+                <div class="viewed__item">
+                    <img class="viewed__item-img" src="images/suit4.png" alt="">
+                    <div class="viewed__item-title">Костюм з брюками</div>
+                    <div class="viewed__item-text">Строгий силует - справжній <br> тренд нового сезону.</div>
+                    <div class="viewed__item-price">1 500,00 грн.</div>
+                </div>
+                <div class="viewed__item">
+                    <img class="viewed__item-img" src="images/suit6.png" alt="">
+                    <div class="viewed__item-title">Костюм з брюками</div>
+                    <div class="viewed__item-text">Строгий силует - справжній <br> тренд нового сезону.</div>
+                    <div class="viewed__item-price">1 500,00 грн.</div>
+                </div>
+                <div class="viewed__item">
+                    <img class="viewed__item-img" src="images/suit7.png" alt="">
+                    <div class="viewed__item-title">Костюм з брюками</div>
+                    <div class="viewed__item-text">Строгий силует - справжній <br> тренд нового сезону.</div>
+                    <div class="viewed__item-price">1 500,00 грн.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /viewed -->
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__item item--1">
+                    <div class="footer__item-title title--open-1">Для покупця</div>
+                    <nav class="footer__menu">
+                        <ul class="footer__list">
+                            <li class="footer__link">
+                                <a href="#">Зв’язатись з нами</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">Питання і відповіді</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">Умови користування</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">Подарункові сертифікати</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__item item--2">
+                    <div class="footer__item-title title--open-2">КОмпанія</div>
+                    <nav class="footer__menu">
+                        <ul class="footer__list">
+                            <li class="footer__link">
+                                <a href="#">Про нас</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">Розпродаж</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__item item--3">
+                    <div class="footer__item-title title--open-3">Замовлення</div>
+                    <nav class="footer__menu">
+                        <ul class="footer__list">
+                            <li class="footer__link">
+                                <a href="#">Доставка</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#"> Оплата</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">Повернення товару</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__item item--4">
+                    <div class="footer__item-title">Соцмережі</div>
+                    <nav class="footer__menu">
+                        <ul class="footer__list">
+                            <li class="footer__link">
+                                <a href="#">Facebook</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">Instagram</a>
+                            </li>
+                            <li class="footer__link">
+                                <a href="#">Pinterest</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="logo">
+                    <a href="#" class="logo__link">
+                        <img src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="footer__text">©2021 Всі права захищені.</div>
+                <div class="footer__text text--right">Політика конфіденційності</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /footer -->
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
